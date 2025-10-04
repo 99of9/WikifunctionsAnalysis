@@ -153,8 +153,8 @@ def edges_from_items(items):
     list_of_edges = []
     for item in items:
         if item['composition'] is not None:
-            pair = (item['parent'], item['title'])  # Creates a tuple as a pair
-            list_of_edges.append(pair)
+            #pair = (item['parent'], item['title'])  # Creates a tuple as a pair
+            #list_of_edges.append(pair)
             all_z7k1 = collect_Z7K1(item['composition'])
             all_z7k1 = [v for v in all_z7k1 if isinstance(v, str)]
             # Deduplicate while keeping order
@@ -163,7 +163,7 @@ def edges_from_items(items):
 
             for z in unique_z7k1:
                 print('pair: '+item['title']+' '+z)
-                pair = (item['title'], z)
+                pair = (item['parent'], z)
                 list_of_edges.append(pair)
 
             
